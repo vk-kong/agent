@@ -1,0 +1,27 @@
+# Local Agent Configuration Example
+# Copy this file to config.yml and update with your values
+
+server:
+  host: "127.0.0.1"  # Listen on localhost only for security
+  port: 5050
+
+auth:
+  # Generate a secure token for authentication
+  # Use: python -c "import secrets; print(secrets.token_urlsafe(32))"
+  token: "your-secret-token-here"
+
+docker:
+  # Working directory where docker-compose.yml is located
+  working_directory: "/path/to/your/docker/compose/directory"
+  
+  # Docker Compose command (use 'docker compose' for Docker Compose V2)
+  compose_command: "docker compose"
+  
+  # Additional compose files (optional)
+  # compose_files:
+  #   - "docker-compose.yml"
+  #   - "docker-compose.override.yml"
+
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "agent.log"
